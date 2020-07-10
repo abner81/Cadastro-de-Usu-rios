@@ -16,6 +16,7 @@ export default function UserCrud() {
   const [nameState, setNameState] = useState("");
   const [emailState, setEmailState] = useState("");
   const [listState, setListState] = useState([]);
+  const [idState, setIdState] = useState(0);
 
   useEffect(() => {
     const asyncReq = async () => {
@@ -45,13 +46,23 @@ export default function UserCrud() {
     email: emailState,
   };
 
+  const userComId = {
+    name: nameState,
+    email: emailState,
+    id: idState,
+  };
+
   const saveForm = async () => {
-    const req = await axios.post(urlBackEnd, user);
+    const userId = userComId.id
+    const methodRequisition = userId ? 'put' : 'post'
+    const url = userId ? `${urlBackEnd}/${userId}` : urlBackEnd
+    const req = await axios[methodRequisition](url, user);
     const list = getUpdateList(req.data)
 
     setListState(list)
     setNameState("");
     setEmailState("");
+    setIdState(0)
   }
 
   const getUpdateList = (user, add = true) => {
@@ -63,7 +74,9 @@ export default function UserCrud() {
   const loadUserInField = (user) => {
     const userName = user.name
     const userEmail = user.email
+    const userId = user.id
 
+    setIdState(userId)
     setNameState(userName);
     setEmailState(userEmail);
   }

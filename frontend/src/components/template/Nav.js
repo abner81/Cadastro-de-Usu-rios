@@ -33,5 +33,11 @@ const AsideNew = styled.aside`
       background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
     }
   }
+
+  @media (max-width: 768px) {
+    nav {
+      display: flex;
+    }
+  }
 `;
 

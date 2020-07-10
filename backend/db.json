@@ -1,24 +1,9 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Abner Machado",
-      "email": "abner81@live.com"
-    },
-    {
-      "name": "João Rocha",
-      "email": "joaocaruca@live.com",
-      "id": 2
-    },
-    {
       "name": "Abner Machado Costa dos Santos",
       "email": "abner81@live.com",
-      "id": 3
-    },
-    {
-      "name": "Abner Machado Costa dos Santos",
-      "email": "75992127947",
-      "id": 4
+      "id": 1
     }
   ]
 }

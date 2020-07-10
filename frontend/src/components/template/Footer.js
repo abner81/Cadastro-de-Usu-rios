@@ -15,4 +15,5 @@ export default function Footer() {
 
 const Rodape = styled.footer`
   font-size: 1.0rem;
+  background-color: #f5f5f5;
 `
